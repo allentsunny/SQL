@@ -1,5 +1,6 @@
 show databases;
-use testbase;
+CREATE DATABASE teastbase;
+use teastbase;
 
 CREATE TABLE  Customers(
 	CustomersID int,
@@ -35,7 +36,17 @@ SELECT min(CustomersID) FROM Customers ;
 SELECT max(CustomersID) FROM Customers ;
 
 SELECT COUNT(CustomersID) FROM Customers;
+
+SELECT SUM(CustomersID) FROM Customers; 
     
+SELECT CustomerName,ContactName
+FROM Customers
+WHERE CustomerName LIKE 'a%';    
     
-    
-    
+SELECT count(CustomersID),Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomersID)<2
+ORDER BY COUNT(CustomersID) desc;
+
+ 
